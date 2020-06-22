@@ -2,4 +2,4 @@ wheel
 Django==3.0.6
 telethon==1.14.0
 celery
-redis==2.10.6
+redis==3.2.0

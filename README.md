@@ -16,3 +16,8 @@ Create virtual environment.
 Install python requirements.
 
     pip install -r requirements.txt
+
+
+Run celery worker
+
+    celery worker -A telegram_poster
