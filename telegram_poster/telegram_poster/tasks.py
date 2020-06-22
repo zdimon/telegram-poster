@@ -8,8 +8,9 @@ from django import db
 
 async def send(phone,client,message):
     print('Send test ')
-    await client.start()
+    await client.connect()
     await client.send_message(phone, message) 
+    await client.disconnect()
     #await client.send_message('+380509123925', 'test') 
     #await client.send_message('+380507750630', 'test') 
 
