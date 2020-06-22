@@ -13,10 +13,10 @@ async def send(phone,client,message):
     #await client.send_message('+380507750630', 'test') 
 
 @shared_task
-def send_message(user_id,message):
+def send_message(phone,message):
     print('Sending message')
-    user = TelegramUser.objects.get(pk=user_id)
+    #user = TelegramUser.objects.get(pk=user_id)
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     client = TelegramClient(TELEGRAM_SESSION_NAME,TELEGRAM_ID,TELEGRAM_KEY,loop=loop)
-    loop.run_until_complete(send(user.key,client,message))
+    loop.run_until_complete(send(phone,client,message))

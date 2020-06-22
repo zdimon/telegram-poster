@@ -13,7 +13,7 @@ function httpPost($url, $data)
 
 $data = ['secret'=>'123','message'=>'test message'];
 $url = 'http://95.217.152.36:7777/notify/';
-$res = httpPost($url,data);
+$res = httpPost($url,$data);
 var_dump($res);
 
 ?>

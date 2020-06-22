@@ -20,7 +20,7 @@ def notify(request):
         c = Client.objects.get(secret=request.POST['secret'])
         for user in TelegramUser.objects.filter(client=c):
             print(user)
-            send_message.delay(user.id,request.POST['message'])
+            send_message.delay(user.key,request.POST['message'])
             
     except:
         pass
