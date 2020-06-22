@@ -5,11 +5,12 @@ from telegram_poster.settings import TELEGRAM_ID, TELEGRAM_KEY, TELEGRAM_SESSION
 import asyncio
 from telethon import TelegramClient
 from telegram_poster.tasks import send_message
+from django.views.decorators.csrf import csrf_exempt
 
 def index(request):
     return render(request,'index.html')
 
-
+@csrf_exempt
 def notify(request):
 
     print(request.POST['secret'])
