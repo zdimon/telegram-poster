@@ -1,0 +1,3 @@
+venv
+*.pyc
+telegram_poster/db.sqlite3
