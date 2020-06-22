@@ -7,4 +7,4 @@ class ClientAdmin(admin.ModelAdmin):
 
 @admin.register(TelegramUser)
 class TelegramUserAdmin(admin.ModelAdmin):
-    list_display = ['key', 'client']
+    list_display = ['key', 'client', 'name']
