@@ -21,7 +21,7 @@ def notify(request):
         for user in TelegramUser.objects.filter(client=c):
             print(user)
             message = request.POST['message']+' Источник: '+c.name
-            send_message.delay(user.key,request.POST['message'])
+            send_message.delay(user.key,message)
             
     except:
         pass
