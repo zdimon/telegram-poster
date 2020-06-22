@@ -3,7 +3,8 @@ from celery import shared_task
 from telegram_poster.settings import TELEGRAM_ID, TELEGRAM_KEY, TELEGRAM_SESSION_NAME
 import asyncio
 from telethon import TelegramClient
-from main.models import TelegramUser
+from django import db
+
 
 async def send(phone,client,message):
     print('Send test ')
@@ -15,6 +16,7 @@ async def send(phone,client,message):
 @shared_task
 def send_message(phone,message):
     print('Sending message')
+    db.connections.close_all()
     #user = TelegramUser.objects.get(pk=user_id)
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
