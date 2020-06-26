@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TELEGRAM_SESSION_NAME = 'zdimon.session'
+TELEGRAM_SESSION_NAME = 'wezom.session'
 TELEGRAM_ID = '314338'
 TELEGRAM_KEY = 'dfdae44a7ccfa24eed4326d54c1e31a5'
 
